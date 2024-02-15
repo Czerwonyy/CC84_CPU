@@ -24,12 +24,13 @@ How to program cpu:
                                                                         0010|0100
 
   Operations:
-  LOAD A - 0001 | loads data from data bus into A register
-  LOAD B - 0010 | loads data from data bus into B register
-  LOAD OP - 0011 | loads 4 first bits from data bus into Operation register
-  LOAD MAR - 0100XXXX | loads data from ADDRES BUS into MAR, the XXXX is the addres of RAM in whitch you want to operate
-  LOAD OU - 0101 | loads data from ALU into OU REGISTER
-  MEM IN - 0110 | loads data from data bus into RAM
-  MEM OU - 0111 | outputs data from RAM into DATA BUS
-  NONE - from 1000 to 1110 | these are not connected to anythink, and you can use these for your modifications
-  RESET - 1111 | resets value of EVERY register into deafult value (0)
+  LOAD A - 0001 [1]| loads data from data bus into A register
+  LOAD B - 0010 [2]| loads data from data bus into B register
+  LOAD OP - 0011 [3]| loads 4 first bits from data bus into Operation register
+  LOAD MAR - 0100XXXX [4]| loads data from ADDRES BUS into MAR, the XXXX is the addres of RAM in whitch you want to operate
+  LOAD OU - 0101 [5]| loads data from ALU into OU REGISTER
+  MEM IN - 0110 [6]| loads data from data bus into RAM
+  MEM OU - 0111 [7]| outputs data from RAM into DATA BUS
+  JMP - 1000 [8]| jump instruction for PC (eg. JUMP 0A)
+  NONE - from 1001 to 1110 [9-E]| these are not connected to anythink, and you can use these for your modifications
+  RESET - 1111 [F]| resets value of EVERY register into deafult value (0)
