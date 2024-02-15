@@ -1,0 +1,35 @@
+CC84 - CZERWONY CPU 8bit 4bit                                                                                                                |
+                                                                                                                                             |
+The 8bit means that the CPU data bus is 8bit wide. The same goes for the 4bit, but insted of data bus its addres bus.                        |
+                                                                                                                                             |
+The architecture of the CPU is SAP (SIMPLE AS POSIBLE) Designed by Ben Eater https://www.youtube.com/@BenEater/featured                      |
+The ALU is copy of one from Dr Craig A. Evans video https://www.youtube.com/watch?v=lvYCchzQTyE&list=PL7wffs-oJ6x3ey5kFlCe-qSaVsw4aHkYK      |
+                                                                                                                                             |
+_____________________________________________________________________________________________________________________________________________/
+
+CU-Control Unit
+PC-Program Counter
+ALU-Arithmetic Logic Unit
+MAR-Memory Addres Register
+
+How to program cpu:
+  First on the control panel the pin 8 is responsible for starting program, while the 7 pin is used to reset the cpu.
+
+  To program the cpu you need change data in the rom modules of PC.
+  The top one is responsible for operation (LOAD A, LOAD MAR etc.) while the botom one is used to send data into DATA BUS
+  The data in operation rom is devided into 2 4bit parts. The bits from 0-3 are used for operation, and bits from 4-7 are used for memory addres.
+
+                                                                  Operation      Memory addres
+                                                                        \        /
+                                                                        0010|0100
+
+  Operations:
+  LOAD A - 0001 | loads data from data bus into A register
+  LOAD B - 0010 | loads data from data bus into B register
+  LOAD OP - 0011 | loads 4 first bits from data bus into Operation register
+  LOAD MAR - 0100XXXX | loads data from ADDRES BUS into MAR, the XXXX is the addres of RAM in whitch you want to operate
+  LOAD OU - 0101 | loads data from ALU into OU REGISTER
+  MEM IN - 0110 | loads data from data bus into RAM
+  MEM OU - 0111 | outputs data from RAM into DATA BUS
+  NONE - from 1000 to 1110 | these are not connected to anythink, and you can use these for your modifications
+  RESET - 1111 | resets value of EVERY register into deafult value (0)
