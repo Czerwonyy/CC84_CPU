@@ -15,7 +15,7 @@ MAR-Memory Addres Register
 How to program cpu:
   First on the control panel the pin 8 is responsible for starting program, while the 7 pin is used to reset the cpu.
 
-  To program the cpu you need change data in the rom modules of PC.
+  To program the cpu (for now) you need change data in the rom modules of PC.
   The top one is responsible for operation (LOAD A, LOAD MAR etc.) while the botom one is used to send data into DATA BUS
   The data in operation rom is devided into 2 4bit parts. The bits from 0-3 are used for operation, and bits from 4-7 are used for memory addres.
 
@@ -23,7 +23,7 @@ How to program cpu:
                                                                         \        /
                                                                         0010|0100
 
-  Operations:
+  Operations/microcodes:
   LOAD A - 0001 [1]| loads data from data bus into A register
   LOAD B - 0010 [2]| loads data from data bus into B register
   LOAD OP - 0011 [3]| loads 4 first bits from data bus into Operation register
